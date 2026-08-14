@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Tools gratuitas de CapiStudio: embeds, configs, Discord, Minecraft, HTML/CSS y plugins." />
+  <title>Tools - CapiStudio Free Tools</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../assets/css/root.css" />
+  <link rel="stylesheet" href="../assets/css/base.css" />
+  <link rel="stylesheet" href="../assets/css/components.css" />
+  <link rel="stylesheet" href="../assets/css/pages.css" />
+</head>
+<body>
+  <header class="site-header" data-header>
+    <nav class="navbar container">
+      <a class="brand" href="../index.html" aria-label="Inicio de CapiStudio Free Tools">
+        <span class="brand__icon">C</span><span>CapiStudio</span>
+      </a>
+      <button class="nav-toggle" type="button" data-nav-toggle aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <div class="nav-menu" data-nav-menu>
+        <a href="tools.html">Tools</a>
+        <a href="docs.html">Docs</a>
+        <a href="../index.html#request" class="btn btn--small">Contacto</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="section page-hero tools-hero">
+      <div class="container">
+        <p class="eyebrow reveal">CapiStudio Tools</p>
+        <h1 class="reveal">Herramientas funcionales listas para usar.</h1>
+        <p class="tools-hero__text reveal">
+          Genera embeds, configs, payloads, recursos de Minecraft, templates HTML/CSS y snippets gratuitos desde una sola página.
+        </p>
+      </div>
+    </section>
+
+    <section class="section tools-page">
+      <div class="container tools-layout">
+        <aside class="tools-sidebar reveal" aria-label="Menú de herramientas">
+          <a href="#embed-generator">Embeds</a>
+          <a href="#config-generator">Configuraciones</a>
+          <a href="#discord-tools">Discord</a>
+          <a href="#minecraft-resources">Minecraft</a>
+          <a href="#html-templates">HTML/CSS</a>
+          <a href="#free-plugins">Plugins</a>
+        </aside>
+
+        <div class="tools-stack">
+          <section id="embed-generator" class="tool-panel reveal" data-tool="embed">
+            <div class="tool-panel__header">
+              <span class="tag">Discord</span>
+              <h2>Generador de embeds</h2>
+              <p>Crea un payload JSON válido para enviar embeds mediante bots o webhooks.</p>
+            </div>
+
+            <div class="tool-grid">
+              <form class="tool-form" data-form="embed" novalidate>
+                <label>Título
+                  <input name="title" type="text" maxlength="256" required placeholder="Nueva actualización" />
+                </label>
+                <label>Descripción
+                  <textarea name="description" maxlength="4000" required placeholder="Describe tu anuncio..."></textarea>
+                </label>
+                <label>Color HEX
+                  <input name="color" type="text" value="#9c5723" pattern="^#[0-9a-fA-F]{6}$" required />
+                </label>
+                <label>URL de imagen opcional
+                  <input name="image" type="url" placeholder="https://example.com/image.png" />
+                </label>
+                <label>Footer
+                  <input name="footer" type="text" maxlength="2048" value="CapiStudio Free Tools" />
+                </label>
+                <button class="btn" type="submit">Generar embed</button>
+              </form>
+
+              <div class="tool-output">
+                <div class="discord-preview" data-embed-preview>
+                  <strong>Vista previa</strong>
+                  <h3>Tu embed aparecerá aquí</h3>
+                  <p>Completa el formulario y pulsa generar.</p>
+                  <small>CapiStudio Free Tools</small>
+                </div>
+                <div class="output-actions">
+                  <button class="btn btn--ghost btn--small" type="button" data-copy-target="embed-output">Copiar JSON</button>
+                </div>
+                <pre><code id="embed-output">{}</code></pre>
+                <p class="form-status" data-status="embed"></p>
+              </div>
+            </div>
+          </section>
+
+          <section id="config-generator" class="tool-panel reveal" data-tool="config">
+            <div class="tool-panel__header">
+              <span class="tag">Configs</span>
+              <h2>Generador de configuraciones</h2>
+              <p>Genera configuraciones base en JSON, YAML o ENV para proyectos y bots.</p>
+            </div>
+
+            <div class="tool-grid">
+              <form class="tool-form" data-form="config" novalidate>
+                <label>Nombre del proyecto
+                  <input name="project" type="text" maxlength="64" required placeholder="capistudio-bot" />
+                </label>
+                <label>Formato
+                  <select name="format" required>
+                    <option value="json">JSON</option>
+                    <option value="yaml">YAML</option>
+                    <option value="env">ENV</option>
+                  </select>
+                </label>
+                <label>Prefix
+                  <input name="prefix" type="text" maxlength="8" value="!" required />
+                </label>
+                <label>Puerto
+                  <input name="port" type="number" min="1" max="65535" value="3000" required />
+                </label>
+                <label>Base de datos
+                  <select name="database" required>
+                    <option value="sqlite">SQLite</option>
+                    <option value="mysql">MySQL</option>
+                    <option value="mongodb">MongoDB</option>
+                  </select>
+                </label>
+                <button class="btn" type="submit">Generar config</button>
+              </form>
+
+              <div class="tool-output">
+                <div class="output-actions">
+                  <button class="btn btn--ghost btn--small" type="button" data-copy-target="config-output">Copiar config</button>
+                </div>
+                <pre><code id="config-output">Selecciona opciones y genera tu configuración.</code></pre>
+                <p class="form-status" data-status="config"></p>
+              </div>
+            </div>
+          </section>
+
+          <section id="discord-tools" class="tool-panel reveal" data-tool="discord">
+            <div class="tool-panel__header">
+              <span class="tag">Discord</span>
+              <h2>Herramientas para Discord</h2>
+              <p>Crea payloads para webhooks y calcula un permission integer básico.</p>
+            </div>
+
+            <div class="tool-grid">
+              <form class="tool-form" data-form="discord" novalidate>
+                <label>Nombre del webhook
+                  <input name="username" type="text" maxlength="80" required value="CapiStudio Bot" />
+                </label>
+                <label>Mensaje
+                  <textarea name="content" maxlength="2000" required placeholder="Mensaje del webhook"></textarea>
+                </label>
+                <label>Avatar URL opcional
+                  <input name="avatar" type="url" placeholder="https://example.com/avatar.png" />
+                </label>
+                <fieldset class="checkbox-group">
+                  <legend>Permisos</legend>
+                  <label><input type="checkbox" name="permission" value="8" /> Administrator</label>
+                  <label><input type="checkbox" name="permission" value="32" /> Manage Server</label>
+                  <label><input type="checkbox" name="permission" value="8192" /> Manage Messages</label>
+                  <label><input type="checkbox" name="permission" value="268435456" /> Manage Roles</label>
+                </fieldset>
+                <button class="btn" type="submit">Generar Discord payload</button>
+              </form>
+
+              <div class="tool-output">
+                <div class="metric-card">
+                  <span>Permission integer</span>
+                  <strong data-permission-output>0</strong>
+                </div>
+                <div class="output-actions">
+                  <button class="btn btn--ghost btn--small" type="button" data-copy-target="discord-output">Copiar JSON</button>
+                </div>
+                <pre><code id="discord-output">{}</code></pre>
+                <p class="form-status" data-status="discord"></p>
+              </div>
+            </div>
+          </section>
+
+          <section id="minecraft-resources" class="tool-panel reveal" data-tool="minecraft">
+            <div class="tool-panel__header">
+              <span class="tag">Minecraft</span>
+              <h2>Recursos para Minecraft</h2>
+              <p>Genera un server.properties base para iniciar un servidor de forma rápida.</p>
+            </div>
+
+            <div class="tool-grid">
+              <form class="tool-form" data-form="minecraft" novalidate>
+                <label>MOTD
+                  <input name="motd" type="text" maxlength="120" required value="CapiStudio Server" />
+                </label>
+                <label>Modo de juego
+                  <select name="gamemode" required>
+                    <option value="survival">Survival</option>
+                    <option value="creative">Creative</option>
+                    <option value="adventure">Adventure</option>
+                  </select>
+                </label>
+                <label>Dificultad
+                  <select name="difficulty" required>
+                    <option value="easy">Easy</option>
+                    <option value="normal">Normal</option>
+                    <option value="hard">Hard</option>
+                    <option value="peaceful">Peaceful</option>
+                  </select>
+                </label>
+                <label>Jugadores máximos
+                  <input name="maxPlayers" type="number" min="1" max="500" value="100" required />
+                </label>
+                <label>Puerto
+                  <input name="serverPort" type="number" min="1" max="65535" value="25565" required />
+                </label>
+                <button class="btn" type="submit">Generar server.properties</button>
+              </form>
+
+              <div class="tool-output">
+                <div class="output-actions">
+                  <button class="btn btn--ghost btn--small" type="button" data-copy-target="minecraft-output">Copiar properties</button>
+                </div>
+                <pre><code id="minecraft-output"># Esperando configuración...</code></pre>
+                <p class="form-status" data-status="minecraft"></p>
+              </div>
+            </div>
+          </section>
+
+          <section id="html-templates" class="tool-panel reveal" data-tool="templates">
+            <div class="tool-panel__header">
+              <span class="tag">HTML/CSS</span>
+              <h2>Plantillas HTML/CSS</h2>
+              <p>Genera templates rápidos para landing, card de producto o navbar responsive.</p>
+            </div>
+
+            <div class="tool-grid">
+              <form class="tool-form" data-form="template" novalidate>
+                <label>Tipo de plantilla
+                  <select name="templateType" required>
+                    <option value="landing">Landing hero</option>
+                    <option value="card">Card de producto</option>
+                    <option value="navbar">Navbar responsive</option>
+                  </select>
+                </label>
+                <label>Nombre de marca
+                  <input name="brand" type="text" maxlength="48" required value="CapiStudio" />
+                </label>
+                <label>Color principal
+                  <input name="templateColor" type="text" pattern="^#[0-9a-fA-F]{6}$" value="#9c5723" required />
+                </label>
+                <button class="btn" type="submit">Generar template</button>
+              </form>
+
+              <div class="tool-output">
+                <div class="output-actions">
+                  <button class="btn btn--ghost btn--small" type="button" data-copy-target="template-output">Copiar HTML</button>
+                </div>
+                <pre><code id="template-output">Elige una plantilla y genera el código.</code></pre>
+                <p class="form-status" data-status="template"></p>
+              </div>
+            </div>
+          </section>
+
+          <section id="free-plugins" class="tool-panel reveal" data-tool="plugins">
+            <div class="tool-panel__header">
+              <span class="tag">Plugins</span>
+              <h2>Plugins gratuitos</h2>
+              <p>Snippets JavaScript seguros y simples para copiar en tus proyectos.</p>
+            </div>
+
+            <div class="tool-grid">
+              <form class="tool-form" data-form="plugin" novalidate>
+                <label>Plugin/snippet
+                  <select name="pluginType" required>
+                    <option value="copy">Botón copiar al portapapeles</option>
+                    <option value="accordion">Accordion accesible</option>
+                    <option value="cookie">Banner de cookies local</option>
+                  </select>
+                </label>
+                <label>Prefijo de clases
+                  <input name="classPrefix" type="text" maxlength="24" pattern="^[a-zA-Z][a-zA-Z0-9-]*$" value="capi" required />
+                </label>
+                <button class="btn" type="submit">Generar plugin</button>
+              </form>
+
+              <div class="tool-output">
+                <div class="output-actions">
+                  <button class="btn btn--ghost btn--small" type="button" data-copy-target="plugin-output">Copiar snippet</button>
+                </div>
+                <pre><code id="plugin-output">Selecciona un plugin y genera el snippet.</code></pre>
+                <p class="form-status" data-status="plugin"></p>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>© <span data-year></span> CapiStudio Free Tools.</p>
+      <a href="../index.html">Home</a>
+    </div>
+  </footer>
+
+  <script src="../assets/js/main.js"></script>
+  <script src="../assets/js/tools.js"></script>
+</body>
+</html>

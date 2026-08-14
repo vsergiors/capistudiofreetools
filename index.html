@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CapiStudio Free Tools - herramientas gratuitas para embeds, configuraciones, Discord, Minecraft, HTML/CSS y plugins." />
+  <title>CapiStudio Free Tools</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="assets/css/root.css" />
+  <link rel="stylesheet" href="assets/css/base.css" />
+  <link rel="stylesheet" href="assets/css/components.css" />
+  <link rel="stylesheet" href="assets/css/home.css" />
+</head>
+<body>
+  <header class="site-header" data-header>
+    <nav class="navbar container">
+      <a class="brand" href="index.html" aria-label="Inicio de CapiStudio Free Tools">
+        <span class="brand__icon">C</span>
+        <span>CapiStudio</span>
+      </a>
+
+      <button class="nav-toggle" type="button" data-nav-toggle aria-label="Abrir menú" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <div class="nav-menu" data-nav-menu>
+        <a href="pages/tools.html">Tools</a>
+        <a href="#tools">Herramientas</a>
+        <a href="pages/docs.html">Docs</a>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero section">
+      <div class="container hero__grid">
+        <div class="hero__content reveal">
+          <p class="eyebrow">Free tools para creators</p>
+          <h1>CapiStudio Free Tools para crear más rápido.</h1>
+          <p class="hero__text">
+            Generadores, recursos y plantillas gratuitas para Discord, Minecraft, HTML/CSS y proyectos web modernos.
+          </p>
+          <div class="hero__actions">
+            <a class="btn" href="pages/tools.html">Abrir tools</a>
+            <a class="btn btn--ghost" href="#request">Solicitar herramienta</a>
+          </div>
+        </div>
+
+        <div class="hero-card reveal" id="preview">
+          <div class="terminal">
+            <div class="terminal__bar"><span></span><span></span><span></span></div>
+            <pre><code>capistudio@tools:~$ init free-tools
+[OK] Embed generator loaded
+[OK] Config builder ready
+[OK] Discord utilities enabled
+[OK] Minecraft resources synced
+[READY] Start building faster</code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="tools" class="section">
+      <div class="container">
+        <div class="section-heading reveal">
+          <p class="eyebrow">Herramientas</p>
+          <h2>Todo lo que necesitas en un solo lugar</h2>
+          <p>Una landing preparada para listar tus tools gratuitas y enlazar cada recurso cuando esté disponible.</p>
+        </div>
+
+        <div class="cards-grid tools-grid">
+          <article class="card reveal">
+            <div class="card__icon">01</div>
+            <h3>Generador de embeds</h3>
+            <p>Crea embeds para Discord con título, descripción, color, imágenes, footer y campos personalizados.</p>
+            <a href="pages/tools.html#embed-generator">Abrir herramienta</a>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon">02</div>
+            <h3>Generador de configuraciones</h3>
+            <p>Construye configs limpias para bots, plugins, servidores y proyectos sin empezar desde cero.</p>
+            <a href="pages/tools.html#config-generator">Crear config</a>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon">03</div>
+            <h3>Herramientas para Discord</h3>
+            <p>Utilidades para webhooks, roles, permisos, mensajes, servidores y automatizaciones de comunidad.</p>
+            <a href="pages/tools.html#discord-tools">Explorar Discord</a>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon">04</div>
+            <h3>Recursos para Minecraft</h3>
+            <p>Ideas, configuraciones, snippets y recursos para mejorar servidores de Minecraft.</p>
+            <a href="pages/tools.html#minecraft-resources">Ver recursos</a>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon">05</div>
+            <h3>Plantillas HTML/CSS</h3>
+            <p>Templates responsive para landing pages, portfolios, dashboards y páginas de comunidad.</p>
+            <a href="pages/tools.html#html-templates">Ver plantillas</a>
+          </article>
+
+          <article class="card reveal">
+            <div class="card__icon">06</div>
+            <h3>Plugins gratuitos</h3>
+            <p>Plugins, componentes y snippets listos para integrar funcionalidades rápidas en tus proyectos.</p>
+            <a href="pages/tools.html#free-plugins">Descargar plugins</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="features" class="section section--alt">
+      <div class="container feature-list">
+        <div class="feature reveal">
+          <span>01</span>
+          <h3>Diseño moderno</h3>
+          <p>Dark UI, gradients, cards, microinteracciones y una identidad visual centrada en #9c5723.</p>
+        </div>
+        <div class="feature reveal">
+          <span>02</span>
+          <h3>Responsive</h3>
+          <p>Preparada para escritorio, tablet y móvil sin dependencias pesadas.</p>
+        </div>
+        <div class="feature reveal">
+          <span>03</span>
+          <h3>Fácil de ampliar</h3>
+          <p>Puedes conectar formularios, APIs, panel de usuario o generadores reales cuando quieras.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="stats" class="section">
+      <div class="container stats reveal">
+        <div><strong>6</strong><span>Categorías</span></div>
+        <div><strong>100%</strong><span>Gratis</span></div>
+        <div><strong>0</strong><span>Dependencias JS</span></div>
+        <div><strong>24/7</strong><span>Disponible</span></div>
+      </div>
+    </section>
+
+    <section id="request" class="section">
+      <div class="container cta reveal">
+        <p class="eyebrow">Próximo paso</p>
+        <h2>¿Quieres convertir estas cards en tools reales?</h2>
+        <p>
+          La estructura ya está lista para añadir generadores funcionales, formularios, descargas o integración con Discord API.
+        </p>
+        <a class="btn" href="mailto:contacto@capistudio.com">Contactar</a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <p>© <span data-year></span> CapiStudio Free Tools. Todos los derechos reservados.</p>
+      <a href="#tools">Herramientas</a>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
